@@ -1,0 +1,37 @@
+package DSA_LAb_Exam;
+class Node{
+public int value;
+public Node left,right;
+public Node(int e)
+{
+value=e;
+left=right=null;
+}
+}
+class Treepostorder{
+Node root;
+Treepostorder(){root=null;}
+void traverse(Node node)
+{
+if(node == null)
+return;
+traverse(node.left);
+traverse(node.right);
+System.out.print(node.value+" ");
+}
+void traversepost(){traverse(root);
+}
+public static void main(String args[])
+{
+Treepostorder pt = new Treepostorder();
+pt.root=new Node(1);
+pt.root.left=new Node(12);
+pt.root.right=new Node(9);
+pt.root.left.left=new Node(5);
+pt.root.left.right=new Node(6);
+pt.root.left.left.left=new Node(2);
+System.out.println("post order is");
+pt.traversepost();
+
+}
+}
